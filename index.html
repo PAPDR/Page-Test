@@ -48,7 +48,6 @@
     "Gor",
     "Ellison",
     "Ignacius",
-    "An unnamed goblin"
   ]
 
   const people_names = [
@@ -58,7 +57,8 @@
     "AJ",
     "Dave",
     "John",
-    "Bernard"
+    "Bernard",
+    "An unnamed goblin"
   ]
 
   const strings = [
@@ -67,7 +67,127 @@
     " ate a forbidden fruit.",
     " lost both arms.",
     " won't forget this.",
-    " got lost to the sands of time."
+    " got lost to the sands of time.",
+    "fought an alien",
+    "battled a dragon",
+    "dueled a rival",
+    "was ambushed",
+    "got hit by an arrow",
+    "blocked a fatal blow",
+    "struck from the shadows",
+    "unleashed a barrage",
+    "cut down an enemy",
+    "was overwhelmed",
+    "stood their ground",
+    "charged into battle",
+    "defeated a warlord",
+    "was knocked unconscious",
+    "barely survived",
+    "fired a blaster",
+    "swung wildly",
+    "parried the attack",
+    "took a critical hit",
+    "landed the final strike",
+    "found treasure",
+    "discovered ancient ruins",
+    "uncovered a hidden vault",
+    "looted a corpse",
+    "found a mysterious artifact",
+    "stumbled upon gold",
+    "unearthed lost technology",
+    "claimed a rare item",
+    "found a glowing crystal",
+    "opened a secret chest",
+    "discovered forbidden knowledge",
+    "retrieved a relic",
+    "found alien technology",
+    "salvaged scrap",
+    "gathered rare materials",
+    "discovered a hidden stash",
+    "found a cursed item",
+    "picked up a strange device",
+    "was abducted by aliens",
+    "teleported unexpectedly",
+    "glitched out of reality",
+    "entered hyperspace",
+    "phased through a wall",
+    "triggered a time loop",
+    "encountered a paradox",
+    "merged with an AI",
+    "downloaded forbidden data",
+    "overloaded their implants",
+    "was scanned by a drone",
+    "activated a portal",
+    "slipped into another dimension",
+    "experienced a system failure",
+    "was targeted by satellites",
+    "triggered an anomaly",
+    "was cloned accidentally",
+    "lost signal",
+    "exploded",
+    "fell into a trap",
+    "triggered an alarm",
+    "was poisoned",
+    "collapsed from exhaustion",
+    "lost their footing",
+    "was captured",
+    "set off a trap",
+    "was betrayed",
+    "ran out of energy",
+    "was critically wounded",
+    "fell into darkness",
+    "was consumed by flames",
+    "froze solid",
+    "was struck by lightning",
+    "lost control",
+    "panicked",
+    "made a fatal mistake",
+    "cast a powerful spell",
+    "was cursed",
+    "was blessed by a deity",
+    "summoned a spirit",
+    "opened a magical portal",
+    "enchanted their weapon",
+    "drank a mysterious potion",
+    "transformed briefly",
+    "spoke an ancient incantation",
+    "awakened a dormant power",
+    "broke a magical seal",
+    "bound a demon",
+    "absorbed magical energy",
+    "lost control of magic",
+    "triggered a rune trap",
+    "was hexed",
+    "gained a magical aura",
+    "charmed an enemy",
+    "explored a distant planet",
+    "traveled beyond the stars",
+    "charted unknown territory",
+    "entered a forbidden zone",
+    "crossed a dangerous path",
+    "descended into a dungeon",
+    "wandered into the void",
+    "discovered a new world",
+    "navigated a storm",
+    "ventured into the abyss",
+    "explored ancient tunnels",
+    "mapped a new region",
+    "walked into a hidden realm",
+    "climbed a massive structure",
+    "crossed into enemy territory",
+    "did something reckless",
+    "caused a massive explosion",
+    "broke everything",
+    "made a questionable decision",
+    "pressed the wrong button",
+    "triggered chaos",
+    "accidentally saved the day",
+    "made things worse",
+    "panicked under pressure",
+    "improvised wildly",
+    "ignored all warnings",
+    "tempted fate",
+    "laughed in the face of danger"
 
   ];
 
@@ -81,18 +201,20 @@
     let firstPart;
 
     //Choses character or player names randomly
-    if (roll < .2){
+    if (roll < .1){
       firstPart = getRandom(people_names);
     }else{
-      firstPart = getRandom(character_names)
+      firstPart = getRandom(character_names);
     }
+    console.log(firstPart);
 
-    const secondPart = getRandom(strings)
+    const secondPart = getRandom(strings);
 
     //Adds both parts together
     const result = firstPart + " " + secondPart;
+    console.log(result);
     //Puts the value into the html document
-    document.getElementById("output").textContent = strings[result];
+    document.getElementById("output").textContent = result;
   }
 </script>
 
