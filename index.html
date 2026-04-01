@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>String Generator</h2>
+  <button onclick="generate()">Generate</button>
+  <div id="output"></div>
+</div>
+
+<script>
+  const strings = [
+    "Hello World",
+    "Welcome to my site",
+    "Random phrase",
+    "Another option",
+    "Something cool"
+  ];
+
+  function generate() {
+    const randomIndex = Math.floor(Math.random() * strings.length);
+    document.getElementById("output").textContent = strings[randomIndex];
+  }
+</script>
+
+</body>
+</html>
