@@ -43,17 +43,56 @@
 </div>
 
 <script>
+  const character_names = [
+    "Slaizen",
+    "Gor",
+    "Ellison",
+    "Ignacius",
+    "An unnamed goblin"
+  ]
+
+  const people_names = [
+    "Pedro",
+    "Alejandro",
+    "Vazquez",
+    "AJ",
+    "Dave",
+    "John",
+    "Bernard"
+  ]
+
   const strings = [
-    "Hello World",
-    "Welcome to my site",
-    "Random phrase",
-    "Another option",
-    "Something cool"
+    " exploded.",
+    " got treasure.",
+    " ate a forbidden fruit.",
+    " lost both arms.",
+    " won't forget this.",
+    " got lost to the sands of time."
+
   ];
 
+  //Gets a random value in an array
+  function getRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
   function generate() {
-    const randomIndex = Math.floor(Math.random() * strings.length);
-    document.getElementById("output").textContent = strings[randomIndex];
+    const roll = Math.random(); // 0 to 1
+    let firstPart;
+
+    //Choses character or player names randomly
+    if (roll < .2){
+      firstPart = getRandom(people_names);
+    }else{
+      firstPart = getRandom(character_names)
+    }
+
+    const secondPart = getRandom(strings)
+
+    //Adds both parts together
+    const result = firstPart + " " + secondPart;
+    //Puts the value into the html document
+    document.getElementById("output").textContent = strings[result];
   }
 </script>
 
