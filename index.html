@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Generator</title>
+  <title>DM Bot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -37,6 +37,10 @@
       margin-top: 30px;
       font-weight: bold;
     }
+
+    button:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -48,6 +52,19 @@
 </div>
 
 <script>
+
+  const colors = [
+  "#f4f4f4",
+  "#ffadad",
+  "#ffd6a5",
+  "#fdffb6",
+  "#caffbf",
+  "#9bf6ff",
+  "#a0c4ff",
+  "#bdb2ff",
+  "#ffc6ff"
+  ];
+
   const character_names = [
     "Slaizen",
     "Gor",
@@ -61,19 +78,19 @@
     "Vazquez",
     "AJ",
     "Dave",
-    "John",
-    "David",
-    "Bernard",
-    "An unnamed goblin"
+    "John ",
+    "Bernard ",
+    "An unnamed goblin ",
+    "[SPOILER] "
   ]
 
   const strings = [
-    "exploded.",
-    "got treasure.",
-    "ate a forbidden fruit.",
-    "lost both arms.",
-    "won't forget this.",
-    "got lost to the sands of time.",
+    " exploded.",
+    " got treasure.",
+    " ate a forbidden fruit.",
+    " lost both arms.",
+    " won't forget this.",
+    " got lost to the sands of time.",
     "fought an alien",
     "battled a dragon",
     "dueled a rival",
@@ -193,14 +210,21 @@
     "improvised wildly",
     "ignored all warnings",
     "tempted fate",
-    "laughed in the face of danger",
-    "danced too long in Limsa",
-    "prays return to the waking sands",
-    "forgot to equip their stance",
-    "spent 10 hours getting cheese",
-    "is evil, probably",
+    "laughed in the face of danger"
 
   ];
+
+  const fake_names = [
+    "Slaizen",
+    "Gor",
+    "Ellison",
+    "Ignacius",
+    "Some guy",
+    "A person",
+    "Johnny Fakename",
+    "Piplup"
+  ]
+
 
   //Gets a random value in an array
   function getRandom(arr) {
@@ -223,9 +247,32 @@
 
     //Adds both parts together
     const result = firstPart + " " + secondPart;
-    console.log(result);
+
+
+    //Animation----
+    const output = document.getElementById("output");
+    let spins = 20;
+    let delay = 50;
+
+    let spinInterval = setInterval(() => {
+      const tempFirst = getRandom(fake_names);
+      const tempSecond = getRandom(strings);
+
+      output.textContent = tempFirst + " " + tempSecond;
+
+      spins--;
+
+      if (spins <= 0) {
+        clearInterval(spinInterval);
+        output.textContent = result;  
+      }
+    }, delay);
+
     //Puts the value into the html document
     document.getElementById("output").textContent = result;
+
+    //Changes background color
+    document.body.style.backgroundColor = getRandom(colors);
   }
 </script>
 
